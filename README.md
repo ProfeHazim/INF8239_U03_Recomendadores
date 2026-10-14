@@ -102,18 +102,13 @@ utilidad/costo. El modelo de contenido se recomienda solo como capa de diversida
 no como *ranker* principal.
 
 ## Declaración de uso de IA
-Durante el desarrollo de este proyecto se utilizó **OpenCode** (agente de IA para
-programación) como asistente en las siguientes actividades:
+Durante el desarrollo de este proyecto se utilizó el modelo **Gemini 3.1 Pro** como consultor técnico y asistente de redacción en las siguientes actividades:
 
-- **Desarrollo:** implementación de la lógica de descarga idempotente de MovieLens,
-  la partición temporal sin fuga (`time_based_split`), el baseline de popularidad
-  suavizada, el filtrado basado en contenido, la factorización de matrices, el
-  sistema híbrido y las métricas de evaluación Top-N y de cobertura.
-- **Depuración:** identificación y corrección del bug de `np.matrix` en la lógica de
-  perfiles de contenido y del sesgo por empates de *timestamp* en la partición temporal.
-- **Refactorización:** unificación de la interfaz `fit`/`recommend` entre modelos,
-  vectorización de `top_n` para acelerar la evaluación y separación del módulo
-  `evaluation.py`.
+- **Desarrollo y Diseño:** Consultas teóricas para la implementación de la descarga idempotente, el *time-based split* sin fuga temporal, las arquitecturas base (popularidad, contenido, factorización e híbrido) y el marco de evaluación Top-N.
+- **Depuración:** Asistencia para identificar el origen de errores técnicos, como el conflicto de compatibilidad con `np.matrix` en `scikit-learn` y el manejo de empates de *timestamp* en los cortes temporales.
+- **Refactorización y Formato:** Apoyo en la optimización de código (ej. vectorización de métricas) y estructuración visual de las tablas de resultados y el análisis de Pareto en formato Markdown.
+
+Todas las implementaciones y decisiones fueron validadas y adaptadas manualmente por el autor. Se adjunta una bitácora detallada (`AI_USE_DECLARATION.md`) como anexo.
 
 Todas las decisiones de diseño, el análisis de resultados (incluido el de Pareto) y
 la redacción fueron revisados y validados por el autor. **Se adjunta un log completo
